@@ -17,3 +17,10 @@
 |Description|TEXT| not null|Описание игры|
 |Price|FLOAT| not null|Цена игры|
 |ReleaseDate|DATE|not null|Дата выхода игры|
+
+## Wallet (кошелек)
+| Название поля | Тип | Ограничение | Описание |
+|---------------|-----|-------------|----------|
+|Id|PK|auto increment; not null; unique|Первичный ключ|
+|UserId|FK|not null|Внешний ключ индентификатора пользователя|
+|Ballance|FLOAT|not null| Балланс кошелька|
