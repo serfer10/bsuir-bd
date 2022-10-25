@@ -3,6 +3,6 @@
 ## User (Пользователь)
 | Название поля | Тип | Ограничение | Описание |
 |---------------|-----|-------------|----------|
-|Id             |PK   |auto increment; not null; unique	             |          |
-|               |     |             |          |
+|Id|PK|auto increment; not null; unique|Первичный ключ|
+|Name|VARCHAR[30]| not null|Имя пользователя|
 |Id             |     |             |          |
