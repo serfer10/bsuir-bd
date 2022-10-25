@@ -51,7 +51,7 @@
 |---------------|-----|-------------|----------|
 |Id|PK|auto increment; not null; unique|Первичный ключ|
 |SenderId|FK|not null|Внешний ключ отправителя|
-|GameId|PK|not null|Внешний ключ игры|
+|GameId|FK|not null|Внешний ключ игры|
 |Score|TINYINT UNSIGNED|not null;<=100| оценка игры|
 |Comment|TEXT||Отзыв об игре|
 
@@ -70,6 +70,29 @@
 | Название поля | Тип | Ограничение | Описание |
 |---------------|-----|-------------|----------|
 |Id|PK|auto increment; not null; unique|Первичный ключ|
-|GameId|PK|not null|Внешний ключ игры|
+|GameId|FK|not null|Внешний ключ игры|
 |UserId|FK|not null|Внешний ключ пользователя|
 |State|VARCHAR(10)|not null|Состояние игры|
+
+## Bill (Чек транзакции)
+| Название поля | Тип | Ограничение | Описание |
+|---------------|-----|-------------|----------|
+|Id|PK|auto increment; not null; unique|Первичный ключ|
+|GameId|FK|not null|Внешний ключ игры|
+|PaymentHistoryId|FK|not null|Внешний ключ истории транзакций|
+|SoldPrice|FLOAT|not null|Цена на момент продажи|
+
+## GameList( Список игр в корзине)
+| Название поля | Тип | Ограничение | Описание |
+|---------------|-----|-------------|----------|
+|Id|PK|auto increment; not null; unique|Первичный ключ|
+|GameId|FK|not null|Внешний ключ игры|
+|CartId|FK|not null|Внешний ключ корзины|
+
+## Message (Сообщения)
+| Название поля | Тип | Ограничение | Описание |
+|---------------|-----|-------------|----------|
+|Id|PK|auto increment; not null; unique|Первичный ключ|
+|SenderId|FK|not null|Внешний ключ отправителя|
+|DiscussionId|FK|not null|Внешний ключ обсуждения|
+|Message|TEXT|not null|Сообщение|
